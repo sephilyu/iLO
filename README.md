@@ -7,6 +7,6 @@ iLO 数据的读取代码来自于 iLO Viewer。<br/>
 LCD Smartie：https://sourceforge.net/projects/lcdsmartie/<br/>
 iLO Viewer：https://github.com/angieduan/iLOViewer<br/>
 
-![](https://gitee.com/sephil/LCD-iLo/blob/master/shot/1.jpg)
-![](https://gitee.com/sephil/LCD-iLo/blob/master/shot/2.jpg)
-![](https://gitee.com/sephil/LCD-iLo/blob/master/shot/3.jpg)
+<img src="https://gitee.com/sephil/LCD-iLo/blob/master/shot/1.jpg" width="100%"></img>
+<img src="https://gitee.com/sephil/LCD-iLo/blob/master/shot/2.jpg" width="100%"></img>
+<img src="https://gitee.com/sephil/LCD-iLo/blob/master/shot/3.jpg" width="100%"></img>
