@@ -1,0 +1,10 @@
+{
+  "Server": {
+    "Name": "Gen8",
+    "Https": true,
+    "Host": "10.18.10.8",
+    "Port": 443,
+    "User": "root",
+    "Password": "Gen8Pass"
+  }
+}

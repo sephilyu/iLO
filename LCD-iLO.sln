@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iLO", "iLO\iLO.csproj", "{07367EF7-0012-46B2-B0BE-7F5D883B6CED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iLO-test", "iLO-test\iLO-test.csproj", "{95666128-A650-49D8-BE2B-D59AB8D170D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07367EF7-0012-46B2-B0BE-7F5D883B6CED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07367EF7-0012-46B2-B0BE-7F5D883B6CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07367EF7-0012-46B2-B0BE-7F5D883B6CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07367EF7-0012-46B2-B0BE-7F5D883B6CED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95666128-A650-49D8-BE2B-D59AB8D170D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95666128-A650-49D8-BE2B-D59AB8D170D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95666128-A650-49D8-BE2B-D59AB8D170D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95666128-A650-49D8-BE2B-D59AB8D170D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F346F16B-9C9F-4A54-83AA-BEA3C2DDD0C2}
+	EndGlobalSection
+EndGlobal

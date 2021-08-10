@@ -1,0 +1,288 @@
+iLO plugin for LCD Smartie
+
+Creator Sephil
+www.naily.vip
+sephil@163.com
+
+
+REQUIREMENTS
+------------
+Requires .NET Framework 4.5
+
+
+DESCRIPTION
+-----------
+This plugin provides read iLO properties from MicroServer Gen8
+
+
+FUNCTIONS
+---------
+Four functions available in current version.
+
+
+Function 1
+ param1: property path, eg: fan/fans[1]/label, temp.temperature[label=CPU].currentreading
+ param2: use pretty value
+ return: postfix if value exists
+
+ examples:
+ $dll(iLO,1,fan/fans[1]/label,)  returns fan 1 speed
+ $dll(iLO,1,temp.temperature[label=CPU].currentreading,)  returns current temperature of CPU
+
+
+Function 2: Overview shortcut
+ param1: property path, eg: server_name means Overview.server_name
+ param2: use pretty value
+ return: postfix if value exists
+
+ examples:
+ $dll(iLO,2,server_name,)  returns server_name
+ 
+
+Function 3: fan shortcut
+ param1: property path, eg: Fan 1.speed means Fan/fans[label=Fan 1].speed
+ param2: use pretty value
+ return: postfix if value exists
+
+ examples:
+ $dll(iLO,3,Fan 1.speed,)  returns server_name
+
+
+Function 4: temperature shortcut
+ param1: property path, eg: CPU.caution means Temp/temperature[label=CPU].caution
+ param2: use pretty value
+ return: postfix if value exists
+
+ examples:
+ $dll(iLO,4,CPU.caution,)  returns CPU caution temperature
+ 
+
+Function 20: loading status
+ param1: not used
+ param2: not used
+ return: status
+
+ examples:
+ $dll(iLO,20,,)
+
+
+
+Sample:
+----
+$dll(iLO,3,Fan 1.speed,%)$Fill(6) $dll(iLO,4,CPU.currentreading,$dll(iLO,4,CPU.temp_unit,))$Fill(12) $dll(iLO,4,PCI.currentreading,$dll(iLO,4,PCI.temp_unit,))$Fill(18) $dll(iLO,4,iLO.currentreading,$dll(iLO,4,iLO.temp_unit,))$Fill(24) $dll(iLO,4,Chipset.currentreading,$dll(iLO,4,Chipset.temp_unit,))
+$dll(iLO,20,,) $dll(iLO,3,Fan 1.speed,%)$Fill(6) $dll(iLO,4,CPU.currentreading,C)$Fill(12) $dll(iLO,4,PCI.currentreading,C)$Fill(18) $dll(iLO,4,iLO.currentreading,C)$Fill(24) $dll(iLO,4,Chipset.currentreading,C)
+
+The Full iLO Response Sample
+----
+{
+  "Overview": {
+    "server_name": "GEN8",
+    "product_name": "ProLiant MicroServer Gen8",
+    "serial_num": "SN NO.",
+    "virtual_serial_num": null,
+    "product_id": "xxxxxx-xxxx",
+    "uuid": "xxxxxxxx-xxxx....",
+    "virtual_uuid": null,
+    "system_rom": "J06 04/04/2019",
+    "system_rom_date": "04/04/2019",
+    "backup_rom_date": "J06 11/02/2015",
+    "license": "iLO Advanced",
+    "ilo_fw_version": "2.78 Apr 28 2021",
+    "ilo_fw_bootleg": "",
+    "nic": 0,
+    "ip_address": "127.0.0.1",
+    "ipv6_link_local": "EE80::A25A:DBFF:FF87:6861",
+    "self_test": "OP_STATUS_OK",
+    "system_health": "OP_STATUS_OK",
+    "uid_led": "UID_OFF",
+    "power": "ON",
+    "date": "Tue Aug 10 02:32:14 2021",
+    "https_port": 443,
+    "ilo_name": "My-iLO.",
+    "removable_hw": [
+      {
+        "tpm_status": "NOT_PRESENT",
+        "module_type": "TPM 1.2",
+        "sd_card": "NOT_PRESENT"
+      }
+    ],
+    "option_ROM_measuring": "Disabled",
+    "has_reset_priv": 1,
+    "chassis_sn": "",
+    "isUEFI": 0,
+    "ers_state": "ERS_INACTIVE",
+    "node_number": 0
+  },
+  "Fan": {
+    "hostpwr_state": "ON",
+    "fans": [
+      {
+        "label": "Fan 1",
+        "location": "System",
+        "status": "OP_STATUS_OK",
+        "speed": 36,
+        "speed_unit": "Percentage"
+      }
+    ]
+  },
+  "Temp": {
+    "hostpwr_state": "ON",
+    "in_post": 0,
+    "temperature": [
+      {
+        "label": "01-Inlet Ambient",
+        "xposition": 3,
+        "yposition": 0,
+        "location": "Ambient",
+        "status": "OP_STATUS_OK",
+        "currentreading": 31,
+        "caution": 42,
+        "critical": 46,
+        "temp_unit": "Celsius"
+      },
+      {
+        "label": "02-CPU",
+        "xposition": 10,
+        "yposition": 6,
+        "location": "CPU",
+        "status": "OP_STATUS_OK",
+        "currentreading": 40,
+        "caution": 70,
+        "critical": 0,
+        "temp_unit": "Celsius"
+      },
+      {
+        "label": "03-P1 DIMM 1-2",
+        "xposition": 14,
+        "yposition": 7,
+        "location": "Memory",
+        "status": "OP_STATUS_OK",
+        "currentreading": 36,
+        "caution": 87,
+        "critical": 0,
+        "temp_unit": "Celsius"
+      },
+      {
+        "label": "04-HD Max",
+        "xposition": 9,
+        "yposition": 6,
+        "location": "System",
+        "status": "OP_STATUS_ABSENT",
+        "currentreading": 0,
+        "caution": 60,
+        "critical": 0,
+        "temp_unit": "Celsius"
+      },
+      {
+        "label": "05-Chipset",
+        "xposition": 4,
+        "yposition": 2,
+        "location": "System",
+        "status": "OP_STATUS_OK",
+        "currentreading": 56,
+        "caution": 105,
+        "critical": 0,
+        "temp_unit": "Celsius"
+      },
+      {
+        "label": "06-Chipset Zone",
+        "xposition": 3,
+        "yposition": 4,
+        "location": "System",
+        "status": "OP_STATUS_OK",
+        "currentreading": 45,
+        "caution": 68,
+        "critical": 73,
+        "temp_unit": "Celsius"
+      },
+      {
+        "label": "07-VR P1 Zone",
+        "xposition": 9,
+        "yposition": 12,
+        "location": "System",
+        "status": "OP_STATUS_OK",
+        "currentreading": 48,
+        "caution": 93,
+        "critical": 98,
+        "temp_unit": "Celsius"
+      },
+      {
+        "label": "08-Supercap Max",
+        "xposition": 13,
+        "yposition": 6,
+        "location": "System",
+        "status": "OP_STATUS_ABSENT",
+        "currentreading": 0,
+        "caution": 65,
+        "critical": 0,
+        "temp_unit": "Celsius"
+      },
+      {
+        "label": "09-iLO Zone",
+        "xposition": 7,
+        "yposition": 15,
+        "location": "System",
+        "status": "OP_STATUS_OK",
+        "currentreading": 44,
+        "caution": 72,
+        "critical": 77,
+        "temp_unit": "Celsius"
+      },
+      {
+        "label": "10-PCI 1",
+        "xposition": 3,
+        "yposition": 10,
+        "location": "I/O Board",
+        "status": "OP_STATUS_ABSENT",
+        "currentreading": 0,
+        "caution": 100,
+        "critical": 0,
+        "temp_unit": "Celsius"
+      },
+      {
+        "label": "11-PCI 1 Zone",
+        "xposition": 2,
+        "yposition": 11,
+        "location": "I/O Board",
+        "status": "OP_STATUS_OK",
+        "currentreading": 37,
+        "caution": 64,
+        "critical": 69,
+        "temp_unit": "Celsius"
+      },
+      {
+        "label": "12-Sys Exhaust",
+        "xposition": 10,
+        "yposition": 15,
+        "location": "Chassis",
+        "status": "OP_STATUS_OK",
+        "currentreading": 44,
+        "caution": 68,
+        "critical": 73,
+        "temp_unit": "Celsius"
+      },
+      {
+        "label": "13-LOM",
+        "xposition": 12,
+        "yposition": 12,
+        "location": "System",
+        "status": "OP_STATUS_OK",
+        "currentreading": 61,
+        "caution": 100,
+        "critical": 0,
+        "temp_unit": "Celsius"
+      }
+    ]
+  },
+  "LastRefresh": "10:32:16"
+}
+
+
+
+
+
+
+
+
+
+
