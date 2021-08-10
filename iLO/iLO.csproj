@@ -60,6 +60,9 @@
     <Content Include="iLO.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="shot\1.jpg" />
+    <Content Include="shot\2.jpg" />
+    <Content Include="shot\3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
