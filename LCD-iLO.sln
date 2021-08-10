@@ -14,6 +14,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shot", "shot", "{46BD134A-88A5-4E06-9607-9B400A696D47}"
+	ProjectSection(SolutionItems) = preProject
+		shot\1.jpg = shot\1.jpg
+		shot\2.jpg = shot\2.jpg
+		shot\3.jpg = shot\3.jpg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +38,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{46BD134A-88A5-4E06-9607-9B400A696D47} = {F75864C2-227B-4DBE-8929-7E28C019DAE0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F346F16B-9C9F-4A54-83AA-BEA3C2DDD0C2}
