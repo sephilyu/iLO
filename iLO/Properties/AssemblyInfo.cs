@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("iLO")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("iLO Plugin")]
+[assembly: AssemblyDescription("iLO Plugin for LCD Smartie")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("iLO")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCompany("NAILY Soft.")]
+[assembly: AssemblyProduct("iLO Plugin for LCD Smartie")]
+[assembly: AssemblyCopyright("Copyright ©  2021 NAILY Soft. ALL RIGHTS RESERVED.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -33,4 +33,4 @@ using System.Runtime.InteropServices;
 //通过使用 "*"，如下所示:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("0.9.21.0810")]
